@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Камень,Бумага или Ножницы?</title>
+</head>
+<body>
+        <style>
+*{margin:0;padding:0;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}::selection{background:#fb9fe5;text-shadow:none}a{color:#0088CC;text-decoration:none;outline:0}a:hover{color:#005580}a img{border:none}img{max-width:100%}html{font-size:100%}body{padding:5%;font:300 1.25em/1.6 monospace;background:#fff;color:#000;}h1{font-family:"Helvetica Neue",sans-serif;line-height:1;font-weight:300;margin-bottom:1em;}.game{padding:2em;background:#eee;}
+         </style>
+            
+                
+                
+<h1><strong>камень, бумага или ножницы?</strong></h1>
+                
+<div class="game">
+                
+<script>
+                        
+ var human = prompt("Что выбираете,камень,бумага или ножницы?");
+                
+ if (! human) {
+                        
+ document.write("<p>Вы: Обновите страницу!</p>");
+  } else {
+                            
+  document.write("<p>Вы:" + " " + human + "</p>");
+  }
+                
+        
+ var pc = Math.random();
+ if (pc < 0.34) {
+ pc = "камень";
+  } else if(pc <= 0.67) {
+      pc = "бумага";
+ } else {
+    pc = "ножницы";
+  }
+                
+                        
+ document.write("<p>Робот:" + " " + pc + "</p>");
+                
+                        
+  var compare = function(option1,option2) {
+   if (option1 === option2) {
+  return "Ничья!";
+     }
+ if (option1 === "камень") {
+ if (option2 === "ножницы") {
+    
+  return "Вы выиграли!";
+  } else {
+                
+   return "Вы проиграли!";
+    }
+  }
+  if (option1 === "бумага") {
+ if (option2 === "камень") {
+                                
+  return "Вы выиграли!";
+  } else {
+                                
+   return "Вы проиграли!";
+   }
+  }
+  if (option1 === "ножницы") {
+   if (option2 === "камень") {
+                            
+    return "Вы проиграли!";
+  } else {
+                            
+    return "Вы выиграли!";
+    }
+   }
+  };
+                
+                        
+   var results = compare(human,pc);
+                
+                
+   document.write("<br><hr><br>" + results);
+  </script>
+                
+ </div>
+                
+     
+    
+    
+
+    
+</body>
+</html>
